@@ -1,0 +1,9 @@
+
+<!--Note: line 3: here dbname = your_database_name, username like root and password can me empty like '' -->
+$db = new PDO('mysql:host=localhost;dbname=patient;charset=utf8mb4', 'username', 'password');
+
+<!-- Note: line 5/6: here $row is your each table row ['0'] is your first field you can use it s array indexing -->
+
+foreach($db->query('SELECT * FROM your_table_name') as $row) {
+    echo $row['0'].' '.$row['1']; //etc...
+}
